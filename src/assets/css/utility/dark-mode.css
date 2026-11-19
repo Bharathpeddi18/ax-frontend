@@ -1,0 +1,157 @@
+/* ========================================
+   Dark Mode Utilities & Themes
+   ======================================== */
+
+/* ----------------------------------------
+   Light Theme
+   ---------------------------------------- */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --ax-color-background: #F8FAFC;
+  --ax-color-surface: #FFFFFF;
+  --ax-color-surface-secondary: #F1F5F9;
+  --ax-color-surface-tertiary: #E2E8F0;
+
+  --ax-color-text: #1E293B;
+  --ax-color-text-secondary: #475569;
+  --ax-color-text-muted: #64748B;
+  --ax-color-text-disabled: #94A3B8;
+
+  --ax-color-border: #E2E8F0;
+  --ax-color-border-secondary: #CBD5E1;
+  --ax-color-border-focus: var(--ax-color-primary);
+
+  --ax-color-focus: #00308F33;
+
+  --ax-color-primary: #00308F;
+  --ax-color-primary-light: #EDF3FF;
+  --ax-color-primary-hover: #002776;
+  --ax-color-primary-active: #001E5B;
+  --ax-color-on-primary: #ffffff;
+
+  --ax-color-secondary: #5B3FBF;
+  --ax-color-secondary-light: #F2EFFF;
+  --ax-color-secondary-hover: #4C33A3;
+  --ax-color-secondary-active: #3E2987;
+  --ax-color-on-secondary: #ffffff;
+
+  --ax-color-default: #374151;
+  --ax-color-default-light: #F3F4F6;
+
+  --ax-color-success: #087F5B;
+  --ax-color-success-light: #EAFBF4;
+  --ax-color-success-hover: #06694A;
+
+  --ax-color-warning: #8A4B00;
+  --ax-color-warning-light: #FFF7E6;
+  --ax-color-warning-hover: #703D00;
+
+  --ax-color-danger: #B42318;
+  --ax-color-danger-light: #FFF0EE;
+  --ax-color-danger-hover: #961C13;
+
+  --ax-color-info: #005A9C;
+  --ax-color-info-light: #EAF6FF;
+  --ax-color-info-hover: #004A80;
+}
+
+/* ----------------------------------------
+   Dark Theme
+   ---------------------------------------- */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ax-color-background: #0B1120;
+  --ax-color-surface: #111827;
+  --ax-color-surface-secondary: #1F2937;
+  --ax-color-surface-tertiary: #374151;
+
+  --ax-color-text: #F9FAFB;
+  --ax-color-text-secondary: #CBD5E1;
+  --ax-color-text-muted: #94A3B8;
+  --ax-color-text-disabled: #64748B;
+
+  --ax-color-border: #374151;
+  --ax-color-border-secondary: #1F2937;
+  --ax-color-border-focus: #3B82F6;
+
+  --ax-color-focus: #3B82F655;
+
+  --ax-color-primary: #3B82F6;
+  --ax-color-primary-light: #1E293B;
+  --ax-color-primary-hover: #60A5FA;
+  --ax-color-primary-active: #93C5FD;
+  --ax-color-on-primary: #ffffff;
+
+  --ax-color-secondary: #8B5CF6;
+  --ax-color-secondary-light: #2E1065;
+  --ax-color-secondary-hover: #A78BFA;
+  --ax-color-secondary-active: #C4B5FD;
+  --ax-color-on-secondary: #ffffff;
+
+  --ax-color-default: #E5E7EB;
+  --ax-color-default-light: #1F2937;
+
+  --ax-color-success: #10B981;
+  --ax-color-success-light: #064E3B;
+  --ax-color-warning: #F59E0B;
+  --ax-color-warning-light: #78350F;
+  --ax-color-danger: #EF4444;
+  --ax-color-danger-light: #7F1D1D;
+  --ax-color-info: #38BDF8;
+  --ax-color-info-light: #0C4A6E;
+}
+
+/* ----------------------------------------
+   System Dark Mode
+   ---------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+
+    --ax-color-background: #0B1120;
+    --ax-color-surface: #111827;
+    --ax-color-surface-secondary: #1F2937;
+    --ax-color-surface-tertiary: #374151;
+
+    --ax-color-text: #F9FAFB;
+    --ax-color-text-secondary: #CBD5E1;
+    --ax-color-text-muted: #94A3B8;
+    --ax-color-text-disabled: #64748B;
+
+    --ax-color-border: #374151;
+    --ax-color-border-secondary: #1F2937;
+    --ax-color-border-focus: #3B82F6;
+
+    --ax-color-focus: #3B82F655;
+
+    --ax-color-primary: #3B82F6;
+    --ax-color-primary-light: #1E293B;
+    --ax-color-primary-hover: #60A5FA;
+    --ax-color-primary-active: #93C5FD;
+    --ax-color-on-primary: #ffffff;
+
+    --ax-color-secondary: #8B5CF6;
+    --ax-color-secondary-light: #2E1065;
+    --ax-color-secondary-hover: #A78BFA;
+    --ax-color-secondary-active: #C4B5FD;
+    --ax-color-on-secondary: #ffffff;
+
+    --ax-color-default: #E5E7EB;
+    --ax-color-default-light: #1F2937;
+
+    --ax-color-success: #10B981;
+    --ax-color-success-light: #064E3B;
+    --ax-color-warning: #F59E0B;
+    --ax-color-warning-light: #78350F;
+    --ax-color-danger: #EF4444;
+    --ax-color-danger-light: #7F1D1D;
+    --ax-color-info: #38BDF8;
+    --ax-color-info-light: #0C4A6E;
+  }
+}

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Root Application Shell Layout (Canonical AX Namespace Spec)
+   ========================================================================== */
+
+.ax-app-layout {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: var(--ax-body-bg-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   Dynamic Menu Width Bounds (Mobile-First Shell Architecture)
+   -------------------------------------------------------------------------- */
+
+/* Mobile Base (0px - 639px): Sidebar acts as an off-canvas overlay.
+   Shell width is 100% so content is never squashed on mobile screens. */
+ .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
+    --ax-menu-width: var(--ax-menu-collapsed-width);
+  }
+
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
+    --ax-menu-width: var(--ax-menu-expanded-width);
+  }
+
+/* Tablet & Desktop (>= 640px): Sidebar participates in shell geometry.
+   Header and Page Wrapper smoothly transition alongside sidebar toggle. */
+@media (min-width: 640px) {
+  .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
+    --ax-menu-width: var(--ax-menu-collapsed-width);
+  }
+
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
+    --ax-menu-width: var(--ax-menu-expanded-width);
+  }
+}

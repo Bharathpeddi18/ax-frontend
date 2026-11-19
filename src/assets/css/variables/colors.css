@@ -1,0 +1,177 @@
+  :root {
+    --ax-body-bg-color: #eff7ff;
+
+    /* Core semantic */
+    --ax-color-primary: #00308F;
+    --ax-color-primary-light: #EDF3FF;
+    --ax-color-secondary: #8250DF;
+    --ax-color-secondary-light: #FBEFFF;
+    --ax-color-default: #24292F;
+    --ax-color-default-light: #F6F8FA;
+    --ax-color-success: #1A7F37;
+    --ax-color-success-light: #DAFBE1;
+    --ax-color-danger: #CF222E;
+    --ax-color-danger-light: #FFEBE9;
+    --ax-color-warning: #9A6700;
+    --ax-color-warning-light: #FFF8C5;
+    --ax-color-info: #0969DA;
+    --ax-color-info-light: #DDF4FF;
+    --ax-color-link: #0969DA;
+    --ax-color-link-light: #DDF4FF;
+
+    /* Extended palette */
+    --ax-color-red: #CF222E;
+    --ax-color-red-light: #FFEBE9;
+    --ax-color-orange: #BC4C00;
+    --ax-color-orange-light: #FFF1E5;
+    --ax-color-yellow: #9A6700;
+    --ax-color-yellow-light: #FFF8C5;
+    --ax-color-green: #1A7F37;
+    --ax-color-green-light: #DAFBE1;
+    --ax-color-mint: #147D64;
+    --ax-color-mint-light: #DDF8EE;
+    --ax-color-teal: #116D6E;
+    --ax-color-teal-light: #DDF5F3;
+    --ax-color-cyan: #096B86;
+    --ax-color-cyan-light: #DDF4FF;
+    --ax-color-blue: #0969DA;
+    --ax-color-blue-light: #DDF4FF;
+    --ax-color-indigo: #4F46B5;
+    --ax-color-indigo-light: #EEEDFF;
+    --ax-color-purple: #8250DF;
+    --ax-color-purple-light: #FBEFFF;
+    --ax-color-pink: #BF3989;
+    --ax-color-pink-light: #FFEBF4;
+    --ax-color-brown: #7D4E2D;
+    --ax-color-brown-light: #F5EDE5;
+
+    /* Intermediate hues */
+    --ax-color-coral: #C4432B;
+    --ax-color-coral-light: #FFEBE5;
+    --ax-color-amber: #9A6700;
+    --ax-color-amber-light: #FFF8C5;
+    --ax-color-lime: #577A15;
+    --ax-color-lime-light: #F0F8D8;
+    --ax-color-emerald: #1A7F37;
+    --ax-color-emerald-light: #DAFBE1;
+    --ax-color-seafoam: #147D64;
+    --ax-color-seafoam-light: #DDF8EE;
+    --ax-color-aqua: #096B86;
+    --ax-color-aqua-light: #DDF4FF;
+    --ax-color-sky: #0969DA;
+    --ax-color-sky-light: #DDF4FF;
+    --ax-color-cobalt: #0550AE;
+    --ax-color-cobalt-light: #DDF4FF;
+    --ax-color-violet: #8250DF;
+    --ax-color-violet-light: #FBEFFF;
+    --ax-color-magenta: #BF3989;
+    --ax-color-magenta-light: #FFEBF4;
+    --ax-color-rose: #CF222E;
+    --ax-color-rose-light: #FFEBE9;
+    --ax-color-bronze: #95511A;
+    --ax-color-bronze-light: #F9EBDD;
+
+    /* Neutrals */
+    --ax-color-slate: #424A53;
+    --ax-color-slate-light: #F6F8FA;
+    --ax-color-black: #1F2328;
+    --ax-color-black-light: #EAEEF2;
+    --ax-color-white: #FFFFFF;
+    --ax-color-white-light: #F6F8FA;
+    --ax-color-gray: #59636E;
+    --ax-color-gray-light: #F6F8FA;
+    --ax-color-zinc: #52525B;
+    --ax-color-zinc-light: #F4F4F5;
+    --ax-color-neutral: #57606A;
+    --ax-color-neutral-light: #F6F8FA;
+    --ax-color-stone: #57534E;
+    --ax-color-stone-light: #F5F5F4;
+    --ax-color-accent: #9A6700;
+    --ax-color-accent-light: #FFF8C5;
+
+    /* Interactive states */
+    --ax-color-primary-hover: #0550AE;
+    --ax-color-primary-active: #033D8B;
+    --ax-color-secondary-hover: #6639BA;
+    --ax-color-secondary-active: #512A97;
+    --ax-color-success-hover: #116329;
+    --ax-color-warning-hover: #805400;
+    --ax-color-danger-hover: #A40E26;
+    --ax-color-info-hover: #0550AE;
+    --ax-color-accent-hover: #805400;
+    --ax-color-accent-active: #633F00;
+
+    /* Backgrounds */
+    --ax-color-background: #F6F8FA;
+    --ax-color-surface: #FFFFFF;
+    --ax-color-surface-secondary: #F6F8FA;
+    --ax-color-surface-tertiary: #EAEEF2;
+
+    /* Text */
+    --ax-color-text: #1F2328;
+    --ax-color-text-secondary: #59636E;
+    --ax-color-text-muted: #59636E;
+    --ax-color-text-disabled: #818B98;
+    --ax-color-text-inverse: #FFFFFF;
+
+    /* Borders */
+    --ax-color-border: #E5E5E5;
+    --ax-color-border-secondary: #AFB8C1;
+    --ax-color-border-focus: #0969DA;
+
+   /* ----------------------------------------
+     Focus
+     ---------------------------------------- */
+
+   --ax-color-focus: #00308F33;
+   /*Added 33 for var(--ax-color-primary) transparency*/
+
+
+   /* ----------------------------------------
+     Select Component
+     ---------------------------------------- */
+
+   --ax-select-hover-color: var(--ax-color-primary);
+   --ax-select-hover-bg: #d7e4ff;
+   --ax-select-hover-border: var(--ax-color-primary);
+   --ax-select-hover-radius: var(--ax-radius-md);
+   --ax-select-selected-color: var(--ax-color-primary);
+   --ax-select-selected-bg: #a2c1ff;
+   --ax-select-active-bg: #b5caef;
+
+
+   /* ----------------------------------------
+     Neutral Grayscale
+     ---------------------------------------- */
+
+   --ax-color-gray-50: #F8FAFC;
+   --ax-color-gray-100: #F1F5F9;
+   --ax-color-gray-200: #E2E8F0;
+   --ax-color-gray-300: #CBD5E1;
+   --ax-color-gray-400: #94A3B8;
+   --ax-color-gray-500: #64748B;
+   --ax-color-gray-600: #475569;
+   --ax-color-gray-700: #334155;
+   --ax-color-gray-800: #1E293B;
+   --ax-color-gray-900: #0F172A;
+   --ax-color-gray-950: #020617;
+
+
+   /* ----------------------------------------
+     KPI Colors
+     ---------------------------------------- */
+   --ax-kpi-color: #0573E1;
+   --ax-kpi-bg-color: #DCEFFF;
+
+   --ax-kpi-color-1: #00308F;
+   --ax-kpi-bg-color-1: #DDE8FF;
+
+   --ax-kpi-color-2: #5B3FBF;
+   --ax-kpi-bg-color-2: #E7DEFF;
+
+   --ax-kpi-color-3: #087F5B;
+   --ax-kpi-bg-color-3: #D9F6E9;
+
+   --ax-kpi-color-4: #B45309;
+   --ax-kpi-bg-color-4: #FFF0CC;
+}

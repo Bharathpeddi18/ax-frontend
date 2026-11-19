@@ -1,0 +1,81 @@
+/* region Card */
+
+.ax-card {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--ax-shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+/* endregion */
+
+
+/* region Sections */
+
+.ax-card-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ax-card-body {
+  flex: 1 1 auto;
+}
+
+.ax-card-footer {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* When card has sections, clear outer container padding */
+.ax-card:has(.ax-card-header),
+.ax-card:has(.ax-card-body),
+.ax-card:has(.ax-card-footer) {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* endregion */
+
+
+/* region Sizes */
+
+.ax-card-xs {
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.ax-card-sm {
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.ax-card-md {
+  padding: 8px;
+  border-radius: 14px;
+}
+
+.ax-card-lg {
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.ax-card-xl {
+  padding: 16px;
+  border-radius: 22px;
+}
+
+
+.ax-card-xs { --ax-card-section-padding: 8px; }
+.ax-card-sm { --ax-card-section-padding: 12px; }
+.ax-card-md { --ax-card-section-padding: 16px; }
+.ax-card-lg { --ax-card-section-padding: 24px; }
+.ax-card-xl { --ax-card-section-padding: 32px; }
+
+.ax-card-header,
+.ax-card-body,
+.ax-card-footer {
+  padding: var(--ax-card-section-padding, 12px);
+}
+
+/* endregion */

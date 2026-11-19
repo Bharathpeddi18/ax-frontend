@@ -1,0 +1,182 @@
+.ax-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 1;
+  font-weight: var(--ax-font-weight-semibold);
+
+  --ax-badge-color: #00308f;
+  --ax-badge-bg-color: #c4d8ff;
+}
+
+.ax-badge-theme-default {
+  background-color: var(--ax-badge-bg-color);
+  color: var(--ax-badge-color);
+}
+
+.ax-badge-theme-primary {
+  background-color: var(--ax-color-primary-light);
+  color: var(--ax-color-primary);
+}
+
+.ax-badge-theme-secondary {
+  background-color: var(--ax-color-secondary-light);
+  color: var(--ax-color-secondary);
+}
+
+.ax-badge-theme-success {
+  background-color: var(--ax-color-success-light);
+  color: var(--ax-color-success);
+}
+
+.ax-badge-theme-warning {
+  background-color: var(--ax-color-warning-light);
+  color: var(--ax-color-warning);
+}
+
+.ax-badge-theme-danger {
+  background-color: var(--ax-color-danger-light);
+  color: var(--ax-color-danger);
+}
+
+.ax-badge-theme-info {
+  background-color: var(--ax-color-info-light);
+  color: var(--ax-color-info);
+}
+
+.ax-badge-theme-purple {
+  background-color: var(--ax-color-purple-light);
+  color: var(--ax-color-purple);
+}
+
+.ax-badge-theme-indigo {
+  background-color: var(--ax-color-indigo-light);
+  color: var(--ax-color-indigo);
+}
+
+.ax-badge-theme-blue {
+  background-color: var(--ax-color-blue-light);
+  color: var(--ax-color-blue);
+}
+
+.ax-badge-theme-cyan {
+  background-color: var(--ax-color-cyan-light);
+  color: var(--ax-color-cyan);
+}
+
+.ax-badge-theme-teal {
+  background-color: var(--ax-color-teal-light);
+  color: var(--ax-color-teal);
+}
+
+.ax-badge-theme-green {
+  background-color: var(--ax-color-green-light);
+  color: var(--ax-color-green);
+}
+
+.ax-badge-theme-yellow {
+  background-color: var(--ax-color-yellow-light);
+  color: var(--ax-color-yellow);
+}
+
+.ax-badge-theme-orange {
+  background-color: var(--ax-color-orange-light);
+  color: var(--ax-color-orange);
+}
+
+.ax-badge-theme-red {
+  background-color: var(--ax-color-red-light);
+  color: var(--ax-color-red);
+}
+
+.ax-badge-theme-rose {
+  background-color: var(--ax-color-rose-light);
+  color: var(--ax-color-rose);
+}
+
+.ax-badge-theme-pink {
+  background-color: var(--ax-color-pink-light);
+  color: var(--ax-color-pink);
+}
+
+.ax-badge-theme-brown {
+  background-color: var(--ax-color-brown-light);
+  color: var(--ax-color-brown);
+}
+
+.ax-badge-theme-slate {
+  background-color: var(--ax-color-slate-light);
+  color: var(--ax-color-slate);
+}
+
+.ax-badge-theme-amber {
+  background-color: var(--ax-color-amber-light);
+  color: var(--ax-color-amber);
+}
+
+.ax-badge-theme-emerald {
+  background-color: var(--ax-color-emerald-light);
+  color: var(--ax-color-emerald);
+}
+
+.ax-badge-theme-violet {
+  background-color: var(--ax-color-violet-light);
+  color: var(--ax-color-violet);
+}
+
+.ax-badge-theme-fuchsia {
+  background-color: var(--ax-color-fuchsia-light);
+  color: var(--ax-color-fuchsia);
+}
+
+.ax-badge-theme-sky {
+  background-color: var(--ax-color-sky-light);
+  color: var(--ax-color-sky);
+}
+
+.ax-badge-theme-lime {
+  background-color: var(--ax-color-lime-light);
+  color: var(--ax-color-lime);
+}
+
+.ax-badge-theme-gray {
+  background-color: var(--ax-color-gray-light);
+  color: var(--ax-color-gray);
+}
+
+.ax-badge-theme-accent {
+  background-color: var(--ax-color-accent-light);
+  color: var(--ax-color-accent);
+}
+
+.ax-badge-sm {
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+.ax-badge-md {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ax-badge-lg {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.ax-badge-radius-sm {
+  border-radius: 2px;
+}
+
+.ax-badge-radius-md {
+  border-radius: 4px;
+}
+
+.ax-badge-radius-lg {
+  border-radius: 8px;
+}
+
+.ax-badge-radius-full {
+  border-radius: 999px;
+}

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Header Component Shell Styles
+   ========================================================================== */
+
+.ax-page-header {
+  min-height: var(--ax-page-header-height);
+  height: auto;
+  background-color: var(--ax-color-surface);
+  border-bottom: 1px solid var(--ax-color-border);
+  box-shadow: var(--ax-shadow);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  z-index: var(--ax-z-index-page-header);
+}
+
+.ax-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ax-page-header-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.75rem;
+}
+
+@media (min-width: 320px) {
+  .ax-page-header{
+    position: relative;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ax-page-header{
+    position: sticky;
+    top: 0;
+  }
+}

@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Sidebar Navigation Menu - Plain Component Styles
+   ========================================================================== */
+
+.ax-menu {
+  --ax-menu-item-hover-bg: rgba(255, 255, 255, 0.08);
+  --ax-menu-item-active-bg: rgba(255, 255, 255, 0.12);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: var(--ax-menu-width, 250px);
+  background: linear-gradient(180deg, var(--ax-color-primary) 0%, #001E5B 100%);
+  box-shadow: var(--ax-shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: var(--ax-z-index-menu);
+  transition: var(--ax-g-transition-all);
+}
+
+/* Toggle States */
+.ax-menu-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--ax-g-transition-all);
+}
+
+.ax-menu.ax-menu-collapsed .ax-menu-toggle {
+  right: -32px;
+}
+
+.ax-menu.ax-menu-expanded .ax-menu-toggle {
+  right: 4px;
+}
+
+.ax-menu.ax-menu-collapsed .ax-menu-label {
+  display: none;
+}
+
+.ax-menu.ax-menu-expanded .ax-menu-label {
+  display: block;
+}
+
+/* 1. Header */
+.ax-menu-header {
+  min-height: var(--ax-header-height, 64px);
+}
+
+.ax-menu-logo {
+  object-fit: contain;
+}
+
+/* 2. Body & Items */
+.ax-menu-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 8px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.ax-menu-item {
+  list-style: none;
+}
+
+.ax-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  background: transparent;
+}
+
+.ax-menu-link:focus,
+.ax-menu-link:hover {
+  text-decoration: none;
+  background-color: var(--ax-menu-item-hover-bg);
+  color: #ffffff;
+}
+
+.ax-menu-item-active>.ax-menu-link,
+.ax-menu-link.ax-menu-link-active {
+  background: var(--ax-menu-item-active-bg);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ax-menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.ax-menu-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

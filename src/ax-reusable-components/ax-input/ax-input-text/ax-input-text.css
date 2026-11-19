@@ -1,0 +1,121 @@
+/* region Input Wrapper */
+
+.ax-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.ax-input-wrapper:focus-within {
+  border-color: #00308f;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 48, 143, 0.12);
+}
+
+/* endregion */
+
+
+/* region Input */
+
+.ax-input-field {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.ax-input-field::placeholder {
+  color: #9ca3af;
+}
+
+/* endregion */
+
+
+/* region Icons */
+
+.ax-input-start-icon,
+.ax-input-end-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #6b7280;
+}
+
+.ax-input-start-icon {
+  margin-right: 8px;
+}
+
+.ax-input-end-icon {
+  margin-left: 8px;
+}
+
+/* endregion */
+
+
+/* region Sizes */
+
+.ax-input-sm {
+  min-height: 32px;
+  padding: 4px 8px;
+}
+
+.ax-input-md {
+  min-height: 40px;
+  padding: 6px 12px;
+}
+
+.ax-input-lg {
+  min-height: 48px;
+  padding: 8px 14px;
+}
+
+/* endregion */
+
+
+/* region Error */
+
+.ax-input-error {
+  border-color: #dc2626;
+}
+
+.ax-input-error:focus-within {
+  border-color: #dc2626;
+
+  box-shadow:
+    0 0 0 2px rgba(220, 38, 38, 0.12);
+}
+
+/* endregion */
+
+
+/* region Read Only */
+
+.ax-input-readonly {
+  cursor: not-allowed;
+
+  background-color: #f3f4f6;
+
+  opacity: 0.7;
+}
+
+.ax-input-readonly .ax-input-field {
+  cursor: not-allowed;
+}
+
+/* endregion */

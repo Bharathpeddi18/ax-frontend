@@ -1,0 +1,14 @@
+/* ========================================
+   Shadow Tokens (100% Tailwind CSS Spec)
+   ======================================== */
+
+:root {
+  --ax-shadow-none: 0 0 #0000;
+  --ax-shadow-sm: 0 0 4px rgb(0 0 0 / 0.08);
+  --ax-shadow: 0 0 6px rgb(0 0 0 / 0.10);
+  --ax-shadow-md: 0 0 10px rgb(0 0 0 / 0.12);
+  --ax-shadow-lg: 0 0 16px rgb(0 0 0 / 0.14);
+  --ax-shadow-xl: 0 0 24px rgb(0 0 0 / 0.16);
+  --ax-shadow-2xl: 0 0 32px rgb(0 0 0 / 0.20);
+  --ax-shadow-inner: inset 0 0 6px rgb(0 0 0 / 0.08);
+}

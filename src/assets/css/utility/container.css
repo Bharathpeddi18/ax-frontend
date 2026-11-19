@@ -1,0 +1,40 @@
+/* ========================================
+   Container (100% Tailwind Spec)
+   ======================================== */
+
+.ax-container {
+  width: 100%;
+  padding: 0px 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* @media (min-width: 640px) {
+  .ax-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ax-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ax-container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ax-container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .ax-container {
+    max-width: 1536px;
+  }
+} */

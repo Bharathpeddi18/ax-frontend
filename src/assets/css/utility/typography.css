@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Typography Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
+
+/* ----------------------------------------
+   Font Family
+   ---------------------------------------- */
+
+.ax-font-sans { font-family: var(--ax-font-sans); }
+.ax-font-serif { font-family: var(--ax-font-serif); }
+.ax-font-mono { font-family: var(--ax-font-mono); }
+
+/* ----------------------------------------
+   Font Size (with Line Heights)
+   ---------------------------------------- */
+
+.ax-text-xs { font-size: var(--ax-font-size-xs); line-height: 1rem; }
+.ax-text-sm { font-size: var(--ax-font-size-sm); line-height: 1.25rem; }
+.ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+.ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
+.ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
+.ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
+.ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }
+.ax-text-3xl { font-size: var(--ax-font-size-3xl); line-height: 2.25rem; }
+.ax-text-4xl { font-size: var(--ax-font-size-4xl); line-height: 2.5rem; }
+.ax-text-5xl { font-size: var(--ax-font-size-5xl); line-height: 1; }
+.ax-text-6xl { font-size: var(--ax-font-size-6xl); line-height: 1; }
+.ax-text-7xl { font-size: var(--ax-font-size-7xl); line-height: 1; }
+.ax-text-8xl { font-size: var(--ax-font-size-8xl); line-height: 1; }
+.ax-text-9xl { font-size: var(--ax-font-size-9xl); line-height: 1; }
+
+/* ----------------------------------------
+   Font Weight
+   ---------------------------------------- */
+
+.ax-font-thin { font-weight: 100; }
+.ax-font-extralight { font-weight: 200; }
+.ax-font-light { font-weight: 300; }
+.ax-font-normal { font-weight: 400; }
+.ax-font-medium { font-weight: 500; }
+.ax-font-semibold { font-weight: 600; }
+.ax-font-bold { font-weight: 700; }
+.ax-font-extrabold { font-weight: 800; }
+.ax-font-black { font-weight: 900; }
+
+/* ----------------------------------------
+   Font Style
+   ---------------------------------------- */
+
+.ax-italic { font-style: italic; }
+.ax-not-italic { font-style: normal; }
+
+/* ----------------------------------------
+   Font Numeric Variants
+   ---------------------------------------- */
+
+.ax-normal-nums { font-variant-numeric: normal; }
+.ax-ordinal { font-variant-numeric: ordinal; }
+.ax-slashed-zero { font-variant-numeric: slashed-zero; }
+.ax-lining-nums { font-variant-numeric: lining-nums; }
+.ax-oldstyle-nums { font-variant-numeric: oldstyle-nums; }
+.ax-proportional-nums { font-variant-numeric: proportional-nums; }
+.ax-tabular-nums { font-variant-numeric: tabular-nums; }
+.ax-diagonal-fractions { font-variant-numeric: diagonal-fractions; }
+.ax-stacked-fractions { font-variant-numeric: stacked-fractions; }
+
+/* ----------------------------------------
+   Letter Spacing (Tracking)
+   ---------------------------------------- */
+
+.ax-tracking-tighter { letter-spacing: var(--ax-tracking-tighter); }
+.ax-tracking-tight { letter-spacing: var(--ax-tracking-tight); }
+.ax-tracking-normal { letter-spacing: var(--ax-tracking-normal); }
+.ax-tracking-wide { letter-spacing: var(--ax-tracking-wide); }
+.ax-tracking-wider { letter-spacing: var(--ax-tracking-wider); }
+.ax-tracking-widest { letter-spacing: var(--ax-tracking-widest); }
+
+/* ----------------------------------------
+   Line Height (Leading)
+   ---------------------------------------- */
+
+.ax-leading-none { line-height: 1; }
+.ax-leading-tight { line-height: 1.25; }
+.ax-leading-snug { line-height: 1.375; }
+.ax-leading-normal { line-height: 1.5; }
+.ax-leading-relaxed { line-height: 1.625; }
+.ax-leading-loose { line-height: 2; }
+
+/* ----------------------------------------
+   Text Align
+   ---------------------------------------- */
+
+.ax-text-left { text-align: left; }
+.ax-text-center { text-align: center; }
+.ax-text-right { text-align: right; }
+.ax-text-justify { text-align: justify; }
+.ax-text-start { text-align: start; }
+.ax-text-end { text-align: end; }

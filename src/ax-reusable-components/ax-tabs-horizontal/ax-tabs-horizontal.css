@@ -1,0 +1,119 @@
+/* ==================================================
+   HORIZONTAL TABS — BASE STYLES
+   ================================================== */
+
+/* Container */
+.ax-tabs-h {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs List */
+.ax-tabs-h-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+
+/* ==================================================
+   TAB BUTTON — BASE STYLES
+   ================================================== */
+
+.ax-tab-h {
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ax-color-text-disabled);
+  font-family: inherit;
+  font-weight: var(--ax-font-weight-semibold);
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* ==================================================
+   TAB STATES — HOVER, FOCUS & ACTIVE
+   ================================================== */
+
+/* Hover / Focus */
+.ax-tab-h:hover,
+.ax-tab-h:focus,
+.ax-tab-h:focus-visible {
+  color: var(--ax-color-primary);
+}
+
+/* Active Tab */
+.ax-tab-h-active {
+  color: var(--ax-color-primary);
+}
+
+
+/* ==================================================
+   TAB SIZES
+   ================================================== */
+
+/* Small */
+.ax-tab-h-sm {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Medium */
+.ax-tab-h-md {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Large */
+.ax-tab-h-lg {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
+
+/* ==================================================
+   HORIZONTAL-SPECIFIC STYLES — BOTTOM INDICATOR
+   ================================================== */
+
+/* Indicator Track */
+.ax-tabs-h-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: var(--ax-color-border);
+  border-radius: var(--ax-radius-xl);
+}
+
+/* Tab Active Indicator */
+.ax-tab-h::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: var(--ax-color-primary);
+  border-radius: var(--ax-radius-xl);
+  opacity: 0;
+}
+
+/* Show Indicator on Active Tab */
+.ax-tab-h-active::after {
+  opacity: 1;
+}
+
+
+/* ==================================================
+   TAB CONTENT
+   ================================================== */
+
+.ax-tabs-h-content {
+  width: 100%;
+}

@@ -19,7 +19,9 @@ interface Submission {
 // endregion
 
 // region Constants
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const BACKEND_URL =
+  process.env.BACKEND_API_URL ||
+  'http://localhost:5000/api';
 // endregion
 
 // region Main Component
@@ -40,8 +42,9 @@ export default function StudentSubmissionsPage() {
       const response = await fetch(`${BACKEND_URL}/students`);
       if (!response.ok) throw new Error('Failed to fetch students');
 
-      const data: Submission[] = await response.json();
-      setTableData(data || []);
+      const result = await response.json();
+      const list: Submission[] = Array.isArray(result) ? result : (result?.data || []);
+      setTableData(list);
     } catch (error) {
       console.error('Fetch students error:', error);
       setTableData([]);
@@ -182,7 +185,7 @@ export default function StudentSubmissionsPage() {
                     ) : (
                       !loading.page && (
                         <tr>
-                          <td colSpan={4} className="ax-py-10 ax-text-center ax-text-gray-500">
+                          <td colSpan={5} className="ax-py-10 ax-text-center ax-text-gray-500">
                             No student data found.
                           </td>
                         </tr>

@@ -12,7 +12,9 @@ import AxSnackbar from '@/ax-reusable-components/ax-snackbar/ax-snackbar';
 import { PopoverContext } from '@/contexts/popover-context';
 
 // region Constants
-const BACKEND_URL = process.env.BACKEND_API_URL || 'http://localhost:8000';
+const BACKEND_URL =
+  process.env.BACKEND_API_URL ||
+  'http://localhost:5000/api';
 
 const CLASS_OPTIONS = [
   { label: '1st Class', value: '1' },
@@ -57,8 +59,11 @@ export default function CreateStudentPage() {
       }
 
       const response = await fetch(`${BACKEND_URL}/add-student`, {
-        method: 'POST',
-        body: formData,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
 
       if (!response.ok) throw new Error('Failed to submit form');

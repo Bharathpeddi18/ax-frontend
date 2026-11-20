@@ -1,12 +1,14 @@
 'use client';
 
-import React from 'react';
 import dynamic from 'next/dynamic';
-import './ax-input-rich-text.css';
-import 'react-quill/dist/quill.snow.css';
+import 'react-quill-new/dist/quill.snow.css';
 import AXInputLabel from '../ax-input-label/ax-input-label';
+import './ax-input-rich-text.css';
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const ReactQuill = dynamic(
+  () => import('react-quill-new'),
+  { ssr: false }
+);
 
 export interface InputRichTextProps {
   propsLabel?: string;
@@ -22,45 +24,60 @@ export interface InputRichTextProps {
 
 const modules = {
   toolbar: [
+    [{ size: ['small', false, 'large', 'huge'] }],
     ['bold', 'italic', 'underline', 'strike'],
-    [{ header: [1, 2, 3, false] }],
-    [{ list: 'ordered' }, { list: 'bullet' }],
-    [{ indent: '-1' }, { indent: '+1' }],
-    [{ align: [] }],
     [{ color: [] }, { background: [] }],
-    ['blockquote', 'code-block'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
     ['link', 'image'],
     ['clean'],
   ],
 };
+
+const formats = [
+  'size',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'color',
+  'background',
+  'list',
+  'link',
+  'image',
+];
 
 export const AXInputRichText = ({
   propsLabel,
   propsValue = '',
   propsPlaceholder = 'Start typing...',
   propsMandatory = false,
-  propsReadOnly = false,
   propsHasError = false,
   propsErrorMessage = '',
   propsClassName = '',
   propsOnChange,
+  propsReadOnly = false,
 }: InputRichTextProps) => {
   return (
-    <div
-      className={`ax-input-rich-text ${propsReadOnly ? 'ax-input-rich-text-readonly' : ''} ${propsHasError ? 'ax-input-rich-text-error' : ''} ${propsClassName}`.trim()}
-    >
+    <div className={`ax-rich-text ${propsClassName}`.trim()}>
       {propsLabel && (
         <AXInputLabel propsLabel={propsLabel} propsMandatory={propsMandatory} />
       )}
 
-      <ReactQuill
-        theme="snow"
-        value={propsValue}
-        onChange={propsOnChange}
-        placeholder={propsPlaceholder}
-        modules={modules}
-        readOnly={propsReadOnly}
-      />
+      <div
+        className={`ax-rich-text-editor ${
+          propsHasError ? 'ax-rich-text-error-border' : ''
+        }`.trim()}
+      >
+        <ReactQuill
+          theme="snow"
+          value={propsValue}
+          onChange={propsOnChange}
+          placeholder={propsPlaceholder}
+          modules={modules}
+          formats={formats}
+          readOnly={propsReadOnly}
+        />
+      </div>
 
       {propsHasError && propsErrorMessage && (
         <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">

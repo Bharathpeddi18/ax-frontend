@@ -47,7 +47,10 @@ export const CardAnnouncements = () => {
           {items.map(({ id, title, description, updatedBy, updatedAt }) => (
             <div key={id} className="ax-py-3">
               <h2 className="ax-text-sm ax-font-semibold ax-text-primary ax-mb-1">{title}</h2>
-              <p className="ax-line-clamp-2 ax-text-sm ax-font-normal ax-text-base ax-m-0">{description}</p>
+              <div
+                className="ax-line-clamp-2 ax-text-sm ax-font-normal ax-text-base ax-m-0"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
               <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-1 ax-mt-1 ax-text-xs ax-text-gray-500 ax-line-clamp-1">
                 <span>Updated by <span className="ax-font-medium ax-text-gray-700">{updatedBy}</span></span>
                 <span>|</span>

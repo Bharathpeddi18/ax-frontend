@@ -32,6 +32,28 @@ jobs:
         env:
           NEXT_PUBLIC_BACKEND_API_URL: ${{ vars.NEXT_PUBLIC_BACKEND_API_URL }}
 
+      - name: Verify embedded backend URL
+        shell: bash
+        env:
+          EXPECTED_BACKEND_URL: ${{ vars.NEXT_PUBLIC_BACKEND_API_URL }}
+        run: |
+          if [ -z "$EXPECTED_BACKEND_URL" ]; then
+            echo "::error::GitHub repository variable is empty"
+            exit 1
+          fi
+
+          if grep -R -F -l "localhost:5000" .next/static; then
+            echo "::error::Localhost found in production client bundle"
+            exit 1
+          fi
+
+          if ! grep -R -F -q "$EXPECTED_BACKEND_URL" .next/static; then
+            echo "::error::Expected Azure backend URL not found in client bundle"
+            exit 1
+          fi
+
+          echo "Production client bundle contains the correct backend URL"
+
       - name: Prepare standalone deployment
         run: |
           mkdir -p deploy

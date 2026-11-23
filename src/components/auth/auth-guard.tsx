@@ -31,7 +31,7 @@ const AuthGuard = ({
     const checkAuthentication = async () => {
       try {
         const response = await fetch(
-          `${process.env.BACKEND_API_URL}/auth/me`,
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/auth/me`,
           {
             method: 'GET',
             credentials: 'include',

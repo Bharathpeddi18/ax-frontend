@@ -1,11 +1,4 @@
-const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_API_URL;
-
-if (!BACKEND_URL) {
-  throw new Error(
-    'NEXT_PUBLIC_BACKEND_API_URL is missing from production build'
-  );
-}
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
 export const fetchSubmissions = async () => {
   const response = await fetch(`${BACKEND_URL}/students`);

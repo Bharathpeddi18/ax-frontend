@@ -1,0 +1,103 @@
+
+name: Deploy AX Frontend to Azure
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BACKEND_API_URL: ${{ vars.NEXT_PUBLIC_BACKEND_API_URL }}
+
+      - name: Verify embedded backend URL
+        shell: bash
+        env:
+          EXPECTED_BACKEND_URL: ${{ vars.NEXT_PUBLIC_BACKEND_API_URL }}
+        run: |
+          if [ -z "$EXPECTED_BACKEND_URL" ]; then
+            echo "::error::GitHub repository variable is empty"
+            exit 1
+          fi
+
+          if grep -R -F -l "localhost:5000" .next/static; then
+            echo "::error::Localhost found in production client bundle"
+            exit 1
+          fi
+
+          if ! grep -R -F -q "$EXPECTED_BACKEND_URL" .next/static; then
+            echo "::error::Expected Azure backend URL not found in client bundle"
+            exit 1
+          fi
+
+          echo "Production client bundle contains the correct backend URL"
+
+      - name: Prepare standalone deployment
+        run: |
+          mkdir -p deploy
+          cp -a .next/standalone/. deploy/
+
+          mkdir -p deploy/.next
+          cp -a .next/static deploy/.next/static
+
+          if [ -d public ]; then
+            cp -a public deploy/public
+          fi
+
+      - name: Upload deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-app
+          path: deploy/
+          include-hidden-files: true
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download deployment artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-app
+          path: .
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1C8AFBC52BE0467F94838EFFF9CDB1EC }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FAE570EB92A740F7989FB8ED69CCB062 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2459944AA0C64C83B576E91EF884739F }}
+
+      - name: Deploy Next.js to Azure
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ax-frontend
+          slot-name: Production
+          package: .

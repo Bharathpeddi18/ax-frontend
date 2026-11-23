@@ -13,8 +13,13 @@ import { PopoverContext } from '@/contexts/popover-context';
 
 // region Constants
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_API_URL ||
-  'http://localhost:5000/api';
+  process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+if (!BACKEND_URL) {
+  throw new Error(
+    'NEXT_PUBLIC_BACKEND_API_URL is missing from production build'
+  );
+}
 
 const CLASS_OPTIONS = [
   { label: '1st Class', value: '1' },

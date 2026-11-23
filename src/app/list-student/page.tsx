@@ -19,15 +19,7 @@ interface Submission {
 // endregion
 
 // region Constants
-const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_API_URL;
-
-if (!BACKEND_URL) {
-  throw new Error(
-    'NEXT_PUBLIC_BACKEND_API_URL is missing from production build'
-  );
-}
-
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
 // region Main Component
 export default function StudentSubmissionsPage() {

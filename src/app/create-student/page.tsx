@@ -13,7 +13,7 @@ import { PopoverContext } from '@/contexts/popover-context';
 
 // region Constants
 const BACKEND_URL =
-  process.env.BACKEND_API_URL ||
+  process.env.NEXT_PUBLIC_BACKEND_API_URL ||
   'http://localhost:5000/api';
 
 const CLASS_OPTIONS = [

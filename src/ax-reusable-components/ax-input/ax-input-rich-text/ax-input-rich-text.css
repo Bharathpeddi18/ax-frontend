@@ -25,6 +25,7 @@
   border: none;
   border-bottom: 1px solid #e5e7eb;
   background-color: #f9fafb;
+  flex-wrap: wrap;
 }
 
 .ax-rich-text-editor .ql-container.ql-snow {
@@ -34,7 +35,19 @@
 }
 
 .ax-rich-text-editor .ql-editor {
-  min-height: 150px;
+  min-height: 160px;
   font-size: 14px;
   line-height: 1.6;
+}
+
+.ax-rich-text-editor .ql-editor.ql-blank::before {
+  font-style: normal;
+  color: #9ca3af;
+}
+
+/* Responsive: stack toolbar on small screens */
+@media (max-width: 480px) {
+  .ax-rich-text-editor .ql-toolbar.ql-snow {
+    padding: 6px 4px;
+  }
 }

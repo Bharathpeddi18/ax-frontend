@@ -12,7 +12,14 @@ import AxSnackbar from '@/ax-reusable-components/ax-snackbar/ax-snackbar';
 import { PopoverContext } from '@/contexts/popover-context';
 
 // region Constants
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+if (!BACKEND_URL) {
+  throw new Error(
+    'NEXT_PUBLIC_BACKEND_API_URL is missing from production build'
+  );
+}
 
 const CLASS_OPTIONS = [
   { label: '1st Class', value: '1' },
@@ -22,8 +29,8 @@ const CLASS_OPTIONS = [
 
 // region Main Component
 export default function CreateStudentPage() {
-  
-  const {popoverCurrent, setPopoverCurrent} = useContext(PopoverContext);
+
+  const { popoverCurrent, setPopoverCurrent } = useContext(PopoverContext);
 
   // region Form States
   const [name, setName] = useState('');

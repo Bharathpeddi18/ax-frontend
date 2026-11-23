@@ -1,0 +1,93 @@
+﻿
+[
+  {
+    "id": "1",
+    "title": "How do I log in to the AX Portal?",
+    "description": "<h2>Login Instructions</h2><p>To access the AX Portal, follow these steps:</p><ol><li>Open the AX Portal website.</li><li>Click the <strong>Login</strong> button.</li><li>Enter your registered email address and password.</li><li>Click <strong>Sign In</strong>.</li></ol><p>After successful authentication, you will be redirected to your dashboard.</p>",
+    "expiry_date": "2027-12-31",
+    "is_archived": "No",
+    "modified_by": "Rahul Sharma",
+    "modified_date": "2026-11-23T08:30:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "How can I reset my password?",
+    "description": "<h2>Password Reset Process</h2><p>If you forget your password, you can request a password reset.</p><ol><li>Open the login page.</li><li>Click <strong>Forgot Password?</strong>.</li><li>Enter your registered email address.</li><li>Follow the password reset instructions sent to your email.</li><li>Create a new, secure password.</li></ol><p><strong>Security Tip:</strong> Never share your password reset link or verification code.</p>",
+    "expiry_date": "2027-12-31",
+    "is_archived": "No",
+    "modified_by": "Priya Reddy",
+    "modified_date": "2026-11-22T10:15:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "How do I update my profile information?",
+    "description": "<h2>Updating Profile Details</h2><p>You can update your personal information from your account settings.</p><ol><li>Sign in to the AX Portal.</li><li>Navigate to <strong>Account Settings</strong>.</li><li>Select <strong>Edit Profile</strong>.</li><li>Update the required information.</li><li>Click <strong>Save Changes</strong>.</li></ol><p>Your updated information will appear in your profile after the changes are saved successfully.</p>",
+    "expiry_date": "2027-06-30",
+    "is_archived": "No",
+    "modified_by": "Arjun Kumar",
+    "modified_date": "2026-11-21T06:45:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "How can I submit a form through the portal?",
+    "description": "<h2>Form Submission Guide</h2><p>Follow these instructions to submit a form:</p><ol><li>Open the <strong>Forms</strong> section.</li><li>Select the required form.</li><li>Complete all mandatory fields.</li><li>Upload supporting documents if required.</li><li>Review the entered information.</li><li>Click <strong>Submit</strong>.</li></ol><p>Make sure all information is accurate before submission.</p>",
+    "expiry_date": "2027-09-30",
+    "is_archived": "No",
+    "modified_by": "Sneha Rao",
+    "modified_date": "2026-11-20T09:20:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "What file formats are supported for document uploads?",
+    "description": "<h2>Supported Document Formats</h2><p>Supported file formats depend on the requirements of the selected form.</p><ul><li><strong>PDF:</strong> Documents and reports</li><li><strong>JPG/JPEG:</strong> Scanned images and photographs</li><li><strong>PNG:</strong> Images and screenshots</li></ul><p>Always verify the permitted file formats and maximum file size shown in the upload field before submitting.</p>",
+    "expiry_date": "2027-06-30",
+    "is_archived": "No",
+    "modified_by": "Kiran Patel",
+    "modified_date": "2026-11-19T11:10:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "How do I contact the support team?",
+    "description": "<h2>Getting Support</h2><p>If you experience problems while using the portal, you can contact the appropriate support person.</p><ol><li>Open the <strong>Point of Contacts</strong> section.</li><li>Find the relevant department or support contact.</li><li>Review the available contact information.</li><li>Contact the person using the provided communication channel.</li></ol><p>When reporting technical problems, include a clear description of the issue.</p>",
+    "expiry_date": "2027-12-31",
+    "is_archived": "No",
+    "modified_by": "Anjali Mehta",
+    "modified_date": "2026-11-18T07:30:00.000Z"
+  },
+  {
+    "id": "7",
+    "title": "Where can I find company policies and guidelines?",
+    "description": "<h2>Accessing Policies and Guidelines</h2><p>The AX Portal provides a dedicated section for organizational policies, memos, and guidelines.</p><ol><li>Sign in to the portal.</li><li>Open the <strong>Policy Memos & Guidelines</strong> section.</li><li>Browse the available documents.</li><li>Select a document to read its contents.</li></ol><p>Review the latest applicable version before following any policy or procedure.</p>",
+    "expiry_date": "2027-12-31",
+    "is_archived": "No",
+    "modified_by": "Vikram Singh",
+    "modified_date": "2026-11-17T08:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "title": "How can I view upcoming events?",
+    "description": "<h2>Viewing Calendar Events</h2><p>The portal calendar displays scheduled events, meetings, and important dates.</p><ol><li>Open the <strong>Calendar</strong> section.</li><li>Select the required month or date.</li><li>Click an event to view available details.</li></ol><p>Event details may include the title, date, time, location, and description.</p>",
+    "expiry_date": "2027-12-31",
+    "is_archived": "No",
+    "modified_by": "Rahul Sharma",
+    "modified_date": "2026-11-16T05:45:00.000Z"
+  },
+  {
+    "id": "9",
+    "title": "How do I navigate the previous portal interface?",
+    "description": "<h2>Legacy Portal Navigation</h2><p>This answer described how users could navigate the earlier AX Portal interface.</p><p>The navigation system has since been updated, and this information is no longer applicable.</p><p>Please refer to the latest portal navigation guide.</p>",
+    "expiry_date": "2026-10-31",
+    "is_archived": "Yes",
+    "modified_by": "Sneha Rao",
+    "modified_date": "2026-11-01T09:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "title": "How were documents uploaded in the old system?",
+    "description": "<h2>Previous Document Upload Process</h2><p>The previous portal version used an earlier document upload workflow.</p><p>This question has been archived because the document upload interface and instructions have been updated.</p><p>Refer to the latest document upload guidelines for current instructions.</p>",
+    "expiry_date": "2026-10-31",
+    "is_archived": "Yes",
+    "modified_by": "Priya Reddy",
+    "modified_date": "2026-11-01T07:15:00.000Z"
+  }
+]

@@ -11,14 +11,27 @@ import {
 } from 'recharts';
 
 import AXCard from '@/ax-reusable-components/ax-card/ax-card'
-import AXBadge from '@/ax-reusable-components/ax-mini-components/ax-badge/ax-badge'
 import { DASHBOARD_COLORS } from '../../../../global-config';
+import { useEffect, useMemo, useState } from 'react';
+import { I_StudentMasterList } from '@/interfaces/student-master';
+import { I_MetadataClassList, I_MetadataSectionList } from '@/interfaces/metadata';
+
+interface I_PropsChartStudentsByClass {
+  filteredStudentData: I_StudentMasterList
+  metadataClassData: I_MetadataClassList
+  metadataSectionData: I_MetadataSectionList
+}
+
+interface I_chartClassData {
+  id: string
+  class: string
+  [section:string]: string
+}
 
 const studentsByClass = [
   { id: 'pre-kg', class: 'Class Pre-KG', A: 42 },
   { id: 'lkg', class: 'Class LKG', A: 58 },
   { id: 'ukg', class: 'Class UKG', A: 32, B: 32 },
-
   { id: 'first-class', class: 'Class 1st', A: 26, B: 27, C: 25 },
   { id: 'second-class', class: 'Class 2nd', A: 36, B: 36, C: 32, D: 30, E: 27 },
   { id: 'third-class', class: 'Class 3rd', A: 27, B: 28, C: 26, D: 24, E: 20, F: 17, G: 15, H: 13, I: 11, J: 9 },
@@ -31,19 +44,39 @@ const studentsByClass = [
   { id: 'tenth-class', class: 'Class 10th', A: 74 },
 ];
 
-const totalStudents = studentsByClass.reduce(
-  (total, item) =>
-    total +
-    (item.A ?? 0) +
-    (item.B ?? 0) +
-    (item.C ?? 0) +
-    (item.D ?? 0),
-  0
-);
+export const ChartStudentsByClass = (props: I_PropsChartStudentsByClass) => {
+  const [ classList, setClassList ] = useState([])
 
-const calculateWidth = (count: number) => count * 75;
+  const allClassList = useMemo(() => {
 
-export const ChartStudentsByClass = () => {
+    const classList = props.filteredStudentData.map(student => 
+      props.metadataClassData.find(metadata => metadata.uid === student.class_id)?.title
+    )
+
+    return [...new Set(classList)]
+
+  }, [])
+
+  const allSectionList = useMemo(() => {
+
+    const sectionList = props.filteredStudentData.map(student => 
+      props.metadataSectionData.find(metadata => metadata.uid === student.section_id)?.title
+    )
+
+    return [...new Set(sectionList)]
+
+  }, [])
+
+  useEffect(() => {
+    console.log(allClassList)
+    console.log(allSectionList)
+  }, [props.filteredStudentData]);
+
+  function calculateWidth(count: number){
+    return count * 75
+  }
+
+
   return (
     <AXCard
       propsSize="lg"
@@ -57,12 +90,6 @@ export const ChartStudentsByClass = () => {
           >
             By Class
           </h3>
-
-          <AXBadge
-            propsLabel={totalStudents.toString()}
-            propsRadius="full"
-            propsClassName="ax-ml-1"
-          />
         </div>
       }
       propsBody={

@@ -12,9 +12,64 @@ import CardAnnouncements from '@/components/announcements/card-announcements';
 import CardQuickLinks from '@/components/quick-links/card-quick-links';
 import CardCalendar from '@/components/calendar/card-calendar';
 import CardPointsOfContact from '@/components/points-of-contacts/card-points-of-contacts';
+import { useEffect, useState } from 'react';
+import { fetchStudentMasterData } from '@/apis/student/master';
+import { I_StudentMasterList } from '@/interfaces/student-master';
+import { fetchClassMetaData } from '@/apis/metadata/class';
+import { I_MetadataClassList } from '@/interfaces/metadata';
+import { fetchSectionMetaData } from '@/apis/metadata/section';
 
 // region Main Component
 export default function DashboardStudentPage() {
+  const [ StudentMasterData, setStudentMasterData ] = useState<I_StudentMasterList>([])
+  const [ filteredStudentData, setFilteredStudentData ] = useState<I_StudentMasterList>([])
+  const [ metadataClassData, setMetadataClassData ] = useState<I_MetadataClassList>([])
+  const [ metadataSectionData, setMetadataSectionData ] = useState<I_MetadataClassList>([])
+
+  useEffect(() => {
+    getStudentMasterData()
+    getMetadataClass()
+    getMetadataSection()
+  }, [])
+
+  // region Functions
+  async function getStudentMasterData(){
+    try{
+      const fetchedStudentMasterData = await fetchStudentMasterData()
+      setStudentMasterData(fetchedStudentMasterData)
+      setFilteredStudentData(fetchedStudentMasterData)
+    }
+    catch (e){
+      console.error(e)
+    }
+  }
+
+  async function getMetadataClass(){
+    try{
+      const fetchedMetadataClassData = await fetchClassMetaData()
+      setMetadataClassData(fetchedMetadataClassData)
+    }
+    catch (e){
+      console.error(e)
+    }
+  }
+
+  async function getMetadataSection(){
+    try{
+      const fetchedMetadataSectionData = await fetchSectionMetaData()
+      setMetadataSectionData(fetchedMetadataSectionData)
+    }
+    catch (e){
+      console.error(e)
+    }
+  }
+
+  // Filter Student Data for charts
+  useEffect(() => {
+
+  }, [filteredStudentData])
+
+
   return (
     <>
       <AXPageHeader
@@ -29,7 +84,7 @@ export default function DashboardStudentPage() {
         }
         propsRightContent={
           <>
-            <Filters />
+            <Filters filteredStudentData={filteredStudentData} />
           </>
         }
       />
@@ -38,7 +93,10 @@ export default function DashboardStudentPage() {
         <Kpis />
         <div className="ax-grid ax-grid-cols-12 ax-gap-4 ax-mt-4">
           <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
-            <ChartStudentsByClass />
+            {filteredStudentData.length>0 ?
+            <ChartStudentsByClass filteredStudentData={filteredStudentData} metadataClassData={metadataClassData} metadataSectionData={metadataSectionData}/>
+            :
+            ''}
           </div>
           <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
             <ChartStudentsByGender />

@@ -1,0 +1,135 @@
+﻿
+[
+  {
+    "id": "1",
+    "student_id": "AX0001",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_pre_kg",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "2",
+    "student_id": "AX0002",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_lkg",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "student_id": "AX0003",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_ukg",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "4",
+    "student_id": "AX0004",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_1",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "5",
+    "student_id": "AX0005",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_2",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "6",
+    "student_id": "AX0006",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_3",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "7",
+    "student_id": "AX0007",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_4",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "8",
+    "student_id": "AX0008",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_5",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "9",
+    "student_id": "AX0009",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_6",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "10",
+    "student_id": "AX0010",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_7",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "11",
+    "student_id": "AX0011",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_8",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  },
+  {
+    "id": "12",
+    "student_id": "AX0012",
+    "academic_year_id": "ay_26_27",
+    "class_id": "class_9",
+    "section_id": "section_a",
+    "attendance_date": "2026-11-23",
+    "status": "P",
+    "modified_by": "201",
+    "modified_date": "2026-11-23T04:30:00.000Z"
+  }
+]

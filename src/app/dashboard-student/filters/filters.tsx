@@ -5,9 +5,15 @@ import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-
 import { InputSelectOption } from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
 import { useEffect, useState } from 'react';
 import { ACADEMIC_YEAR_OPTIONS, CLASS_OPTIONS, GENDER_OPTIONS, GRADE_OPTIONS, SECTION_OPTIONS_BY_CLASS } from './sample-data';
+import { I_StudentMasterList } from '@/interfaces/student-master';
+
+// region interfaces
+interface I_FilterProps{
+  filteredStudentData: I_StudentMasterList
+}
 
 // region Main Component
-export const Filters = () => {
+export const Filters = (props:I_FilterProps) => {
   const [valueAcademicYear, setValueAcademicYear] = useState(ACADEMIC_YEAR_OPTIONS[0].value);
   const [valueClass, setValueClass] = useState(CLASS_OPTIONS[0].value);
   const [valueSection, setValueSection] = useState(SECTION_OPTIONS_BY_CLASS[valueClass][0].value);

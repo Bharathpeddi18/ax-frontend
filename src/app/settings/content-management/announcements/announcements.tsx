@@ -14,7 +14,6 @@ export interface Announcement {
   isArchived: string;
 }
 
-import { SAMPLE_ANNOUNCEMENTS } from './sample-data';
 import Icon from '@/assets/icons';
 import { SETTINGS_CONTENT_VIEW_MODES } from '../../../../../global-config';
 import { PopoverContext } from '@/contexts/popover-context';
@@ -25,10 +24,35 @@ export default function Announcements() {
   const { popoverCurrent, setPopoverCurrent } = useContext(PopoverContext);
 
   // State
-  const [announcements, setAnnouncements] = useState<Announcement[]>(SAMPLE_ANNOUNCEMENTS);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [viewMode, setViewMode] = useState<SETTINGS_CONTENT_VIEW_MODES>(SETTINGS_CONTENT_VIEW_MODES.list);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState<number | null>(null);
+
+  // region UseEffects
+
+useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchAnnouncements = async () => {
+      const response = await fetch('/sample/announcements.json', {
+        signal: controller.signal,
+        cache: 'no-store',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch announcements');
+      }
+
+      const data: Announcement[] = await response.json();
+
+      setAnnouncements(data);
+    }
+
+    fetchAnnouncements()
+
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     setCurrentTime(Date.now());
@@ -81,6 +105,7 @@ export default function Announcements() {
   useEffect(() => {
     console.log(`context: ${popoverCurrent}`)
   }, [popoverCurrent])
+
   return (
     <div className="ax-flex ax-flex-col ax-gap-3">
       {/* Header section */}

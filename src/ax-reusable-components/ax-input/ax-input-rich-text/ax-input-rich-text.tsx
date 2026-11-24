@@ -5,10 +5,7 @@ import 'react-quill-new/dist/quill.snow.css';
 import AXInputLabel from '../ax-input-label/ax-input-label';
 import './ax-input-rich-text.css';
 
-const ReactQuill = dynamic(
-  () => import('react-quill-new'),
-  { ssr: false }
-);
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false });
 
 export interface InputRichTextProps {
   propsLabel?: string;
@@ -24,26 +21,22 @@ export interface InputRichTextProps {
 
 const modules = {
   toolbar: [
-    [{ size: ['small', false, 'large', 'huge'] }],
+    [{ header: [1, 2, 3, false] }],
     ['bold', 'italic', 'underline', 'strike'],
-    [{ color: [] }, { background: [] }],
+    [{ align: [] }],
     [{ list: 'ordered' }, { list: 'bullet' }],
-    ['link', 'image'],
+    ['blockquote', 'link'],
     ['clean'],
   ],
 };
 
 const formats = [
-  'size',
-  'bold',
-  'italic',
-  'underline',
-  'strike',
-  'color',
-  'background',
+  'header',
+  'bold', 'italic', 'underline', 'strike',
+  'align',
   'list',
+  'blockquote',
   'link',
-  'image',
 ];
 
 export const AXInputRichText = ({

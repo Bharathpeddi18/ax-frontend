@@ -1,0 +1,120 @@
+﻿
+[
+  {
+    "id": "1",
+    "uid": "class_pre_kg",
+    "title": "Class Pre-KG",
+    "sections": "0",
+    "is_archived": "No",
+    "modified_by": "Rahul Sharma",
+    "modified_date": "2026-11-23T08:30:00.000Z"
+  },
+  {
+    "id": "2",
+    "uid": "class_lkg",
+    "title": "Class LKG",
+    "sections": "1,2",
+    "is_archived": "No",
+    "modified_by": "Priya Reddy",
+    "modified_date": "2026-11-22T10:15:00.000Z"
+  },
+  {
+    "id": "3",
+    "uid": "class_ukg",
+    "title": "Class UKG",
+    "sections": "1,2",
+    "is_archived": "No",
+    "modified_by": "Arjun Kumar",
+    "modified_date": "2026-11-21T06:45:00.000Z"
+  },
+  {
+    "id": "4",
+    "uid": "class_1",
+    "title": "Class 1",
+    "sections": "1,2,3",
+    "is_archived": "No",
+    "modified_by": "Sneha Rao",
+    "modified_date": "2026-11-20T09:20:00.000Z"
+  },
+  {
+    "id": "5",
+    "uid": "class_2",
+    "title": "Class 2",
+    "sections": "1,2,3",
+    "is_archived": "No",
+    "modified_by": "Kiran Patel",
+    "modified_date": "2026-11-19T11:10:00.000Z"
+  },
+  {
+    "id": "6",
+    "uid": "class_3",
+    "title": "Class 3",
+    "sections": "1,2,3",
+    "is_archived": "No",
+    "modified_by": "Anjali Mehta",
+    "modified_date": "2026-11-18T07:30:00.000Z"
+  },
+  {
+    "id": "7",
+    "uid": "class_4",
+    "title": "Class 4",
+    "sections": "1,2,3",
+    "is_archived": "No",
+    "modified_by": "Vikram Singh",
+    "modified_date": "2026-11-17T08:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "uid": "class_5",
+    "title": "Class 5",
+    "sections": "1,2,3,4",
+    "is_archived": "No",
+    "modified_by": "Rahul Sharma",
+    "modified_date": "2026-11-16T05:45:00.000Z"
+  },
+  {
+    "id": "9",
+    "uid": "class_6",
+    "title": "Class 6",
+    "sections": "1,2,3,4",
+    "is_archived": "No",
+    "modified_by": "Priya Reddy",
+    "modified_date": "2026-11-15T09:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "uid": "class_7",
+    "title": "Class 7",
+    "sections": "1,2,3,4",
+    "is_archived": "No",
+    "modified_by": "Arjun Kumar",
+    "modified_date": "2026-11-14T07:15:00.000Z"
+  },
+  {
+    "id": "11",
+    "uid": "class_8",
+    "title": "Class 8",
+    "sections": "1,2,3,4,5",
+    "is_archived": "No",
+    "modified_by": "Sneha Rao",
+    "modified_date": "2026-11-13T08:30:00.000Z"
+  },
+  {
+    "id": "12",
+    "uid": "class_9",
+    "title": "Class 9",
+    "sections": "1,2,3,4,5",
+    "is_archived": "No",
+    "modified_by": "Kiran Patel",
+    "modified_date": "2026-11-12T10:15:00.000Z"
+  },
+  {
+    "id": "13",
+    "uid": "class_10",
+    "title": "Class 10",
+    "sections": "1,2,3,4,5,6",
+    "is_archived": "No",
+    "modified_by": "Anjali Mehta",
+    "modified_date": "2026-11-11T06:45:00.000Z"
+  }
+]

@@ -27,7 +27,16 @@ jobs:
         run: npm ci
 
       - name: Build Next.js application
-        run: npm run build
+        env:
+          NEXT_PUBLIC_BACKEND_API_URL: ${{ vars.NEXT_PUBLIC_BACKEND_API_URL }}
+        run: |
+          if [ -z "$NEXT_PUBLIC_BACKEND_API_URL" ]; then
+            echo "ERROR: Backend API URL is missing"
+            exit 1
+          fi
+
+          echo "SUCCESS: Backend API URL is available"
+          npm run build
 
       - name: Prepare standalone deployment
         run: |

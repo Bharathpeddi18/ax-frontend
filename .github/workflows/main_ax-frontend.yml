@@ -1,53 +1,78 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - ax-frontend
+name: Build and deploy Next.js app to Azure - ax-frontend
 
 on:
   push:
     branches:
-      - 'main'
+      - main
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Upload artifact for deployment job
+      - name: Build Next.js application
+        run: npm run build
+
+      - name: Prepare standalone deployment
+        run: |
+          mkdir -p deployment
+          cp -a .next/standalone/. deployment/
+
+          mkdir -p deployment/.next
+          cp -a .next/static deployment/.next/static
+
+          if [ -d public ]; then
+            cp -a public deployment/public
+          fi
+
+      - name: Verify deployment files
+        run: |
+          ls -la deployment
+          ls -la deployment/.next
+          test -f deployment/server.js
+
+      - name: Create deployment ZIP
+        run: |
+          cd deployment
+          zip -qr ../deployment.zip .
+
+      - name: Upload deployment artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: deployment.zip
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
+
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download deployment artifact
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -55,11 +80,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E367A0E435EB475298D9A51E48FD26C0 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_40461B263DBA4EC0913B5752E9736DCC }}
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'ax-frontend'
           slot-name: 'Production'
-          package: .
-          
+          package: deployment.zip

@@ -36,12 +36,8 @@ export default function StudentSubmissionsPage() {
   const fetchSubmissions = async () => {
     setLoading((prev) => ({ ...prev, page: true }));
     try {
-      console.log("Backend URL:", BACKEND_URL)
       const response = await fetch(`${BACKEND_URL}/students`);
-      console.log(response)
-      console.log(response.json())
       if (!response.ok) throw new Error('Failed to fetch students');
-
       const result = await response.json();
       const list: Submission[] = Array.isArray(result) ? result : (result?.data || []);
       setTableData(list);

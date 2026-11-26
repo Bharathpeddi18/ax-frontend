@@ -1,18 +1,18 @@
 'use client';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
 import AddOrEdit from './add-or-edit';
 
 // region Types
-export interface Announcement {
+export interface I_Announcement {
   id: string;
   title: string;
   description: string;
   expiryDate: string;
   isArchived: string;
-}
+}[]
 
 import Icon from '@/assets/icons';
 import { SETTINGS_CONTENT_VIEW_MODES } from '../../../../../global-config';
@@ -24,43 +24,34 @@ export default function Announcements() {
   const { popoverCurrent, setPopoverCurrent } = useContext(PopoverContext);
 
   // State
-  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+  const [announcements, setAnnouncements] = useState<I_Announcement[]>([]);
   const [viewMode, setViewMode] = useState<SETTINGS_CONTENT_VIEW_MODES>(SETTINGS_CONTENT_VIEW_MODES.list);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState<number | null>(null);
 
   // region UseEffects
-
-useEffect(() => {
-    const controller = new AbortController();
+  useEffect(() => {
 
     const fetchAnnouncements = async () => {
-      const response = await fetch('/sample/announcements.json', {
-        signal: controller.signal,
-        cache: 'no-store',
-      });
+      const response = await fetch('/sample/content/announcements.json');
 
       if (!response.ok) {
         throw new Error('Failed to fetch announcements');
       }
 
-      const data: Announcement[] = await response.json();
-
+      const data: I_Announcement[] = await response.json();
       setAnnouncements(data);
     }
 
     fetchAnnouncements()
-
-    return () => controller.abort();
   }, []);
 
-  useEffect(() => {
-    setCurrentTime(Date.now());
-  }, []);
+  const filteredAnnouncements:I_Announcement[] = useMemo(() => {
+    return announcements.filter((item:any) => !item.isArchived)
+  }, [announcements])
 
   // Handlers
   const handleAddClick = () => {
-    setPopoverCurrent('Button - Add Announcement')
     setEditingId(null);
     setViewMode(SETTINGS_CONTENT_VIEW_MODES.add);
   };
@@ -71,14 +62,11 @@ useEffect(() => {
   };
 
   const handleDelete = (id: string) => {
-    setViewMode(SETTINGS_CONTENT_VIEW_MODES.list);
     setEditingId(null);
-    if (window.confirm('Are you sure you want to delete this announcement?')) {
-      setAnnouncements((prev) => prev.filter((a) => a.id !== id));
-    }
+    setViewMode(SETTINGS_CONTENT_VIEW_MODES.list);
   };
 
-  const handleSave = (formData: Announcement) => {
+  const handleSave = (formData: I_Announcement) => {
     if (viewMode === SETTINGS_CONTENT_VIEW_MODES.add) {
       const newId = Date.now().toString();
       setAnnouncements((prev) => [{ ...formData, id: newId }, ...prev]);
@@ -95,16 +83,6 @@ useEffect(() => {
     setViewMode(SETTINGS_CONTENT_VIEW_MODES.list);
     setEditingId(null);
   };
-
-  const filteredAnnouncements = announcements.filter((ann) => {
-    const isArchived = ann.isArchived === 'Yes';
-    const isExpired = currentTime ? new Date(ann.expiryDate).getTime() < currentTime : false;
-    return !isArchived && !isExpired;
-  });
-
-  useEffect(() => {
-    console.log(`context: ${popoverCurrent}`)
-  }, [popoverCurrent])
 
   return (
     <div className="ax-flex ax-flex-col ax-gap-3">

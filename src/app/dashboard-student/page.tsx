@@ -89,7 +89,7 @@ export default function DashboardStudentPage() {
         }
       />
 
-      <main className='ax-container ax-mt-3'>
+      <main className='ax-container'>
         <Kpis />
         <div className="ax-grid ax-grid-cols-12 ax-gap-4 ax-mt-4">
           <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">

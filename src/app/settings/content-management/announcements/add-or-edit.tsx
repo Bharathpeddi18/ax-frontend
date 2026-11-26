@@ -7,18 +7,18 @@ import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-inpu
 import AXInputRichText from '@/ax-reusable-components/ax-input/ax-input-rich-text/ax-input-rich-text';
 import AXInputDate from '@/ax-reusable-components/ax-input/ax-input-date/ax-input-date';
 import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
-import { Announcement } from './announcements';
+import { I_Announcement } from './announcements';
 import { SELECT_YES_NO_OPTIONS } from '../../../../../global-config';
 import AxModalPopover from '@/ax-reusable-components/ax-modal-popover/ax-modal-popover';
 
 interface AddOrEditProps {
-  initialData?: Announcement | null;
-  onSave: (data: Announcement) => void;
+  initialData?: I_Announcement | null;
+  onSave: (data: I_Announcement) => void;
   onCancel: () => void;
 }
 
 export default function AddOrEdit({ initialData, onSave, onCancel }: AddOrEditProps) {
-  const [formData, setFormData] = useState<Announcement>({
+  const [formData, setFormData] = useState<I_Announcement>({
     id: '',
     title: '',
     description: '',
